@@ -12,6 +12,7 @@ output "a" {
 
 output "x" {
   value = "Value of a = ${var.a}"
+}
 
 output "Values" {
   value = "Values, a = ${var.a} b = ${var.b} c = ${var.c} d = ${var.d}"
