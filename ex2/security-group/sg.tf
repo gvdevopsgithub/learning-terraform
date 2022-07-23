@@ -25,20 +25,6 @@ resource "aws_security_group" "allow_ssh" {
   }
 }
 
-resource "aws_instance" "web" {
-  ami           = "ami-0f234acd4850f57e2"
-  instance_type = "t3.micro"
-  vpc_security_group_ids = [aws_security_group.allow_ssh.id]
-
-  tags = {
-    Name = "terraform"
-  }
-}
-
-terraform {
-  backend "s3" {
-    bucket = "terraform-b656"
-    key    = "ex1/terraform.tfstate"
-    region = "us-east-1"
-  }
+output "SGID" {
+  value = "aws_security_group.allow_ssh.id"
 }
