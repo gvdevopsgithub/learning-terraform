@@ -4,7 +4,10 @@ module "sg" {
 
 module "instance" {
   source = "./instance"
+  SGID = module.sg.SGID
 }
+
+
 
 terraform {
   backend "s3" {
