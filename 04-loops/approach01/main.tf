@@ -12,4 +12,4 @@ variable "instance_types" {
   default = ["t3.micro" , "t3.small"]
 }
 
-// requirement is , Create number of instances og thr given instance types
+// requirement is , Create number of instances og the given instance types
