@@ -1,13 +1,15 @@
-variable "no-of-instances" {
-  default = 2
-}
-
 resource "aws_instance" "web" {
-  count         = var.no-of-instances
+  count         = length(var.instance_types)
   ami           = "ami-0f234acd4850f57e2"
-  instance_type = "t3.micro"
+  instance_type = var.instance_types[count.index]
 
   tags = {
     Name = "terraform-${count.index + 1}"
   }
 }
+
+variable "instance_types" {
+  default = ["t3.micro" , "t3.small"]
+}
+
+// requirement is , Create number of instances og thr given instance types
