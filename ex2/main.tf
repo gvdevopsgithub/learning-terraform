@@ -4,7 +4,6 @@ module "sg" {
 
 module "instance" {
   source = "./instance"
-  SGID = "module.sg.SGID"
 }
 
 terraform {
