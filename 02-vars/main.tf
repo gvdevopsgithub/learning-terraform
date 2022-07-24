@@ -28,3 +28,11 @@ variable "c" {}
 
 variable "d" {}
 // this variable from SHELL, export TF_VAR_d=500
+
+variable "sample" {
+  default = [100, 200, "abc"]
+}
+
+output "sample" {
+  value = "var.sample[1]"
+}
