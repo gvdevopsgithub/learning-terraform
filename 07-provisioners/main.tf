@@ -19,9 +19,9 @@ provisioner "remote-exec" {
       "uname"
       ]
     }
-  }
 
-    resource "aws_security_group" "allow_ssh" {
+
+resource "aws_security_group" "allow_ssh" {
       name        = "allow_ssh"
       description = "Allow TLS inbound traffic"
       vpc_id      = "vpc-0ac989353056ea1a4"
