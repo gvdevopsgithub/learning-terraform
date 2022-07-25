@@ -8,12 +8,11 @@ resource "aws_instance" "web" {
 }
 
 provisioner "remote-exec" {
-  inline = [
     connection {
       type     = "ssh"
       user     = "root"
       password = DevOps321
-      host     = self.public_ip
+      host     = self.public
     }
 
     inline = [
