@@ -7,7 +7,7 @@ resource "aws_instance" "web" {
   }
 }
 
-provisioner "remote-exec" {
+  provisioner "remote-exec" {
     connection {
       type     = "ssh"
       user     = "root"
