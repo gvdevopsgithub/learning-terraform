@@ -5,7 +5,7 @@ resource "aws_instance" "web" {
   tags = {
     Name = "terraform"
   }
-}
+
 
   provisioner "remote-exec" {
     connection {
@@ -19,7 +19,7 @@ resource "aws_instance" "web" {
       "uname"
       ]
     }
-
+}
 
 resource "aws_security_group" "allow_ssh" {
       name        = "allow_ssh"
