@@ -21,20 +21,20 @@ resource "aws_instance" "web" {
 //  }
 }
 
-resource "null_resource" "null" {}
- provisioner "remote-exec" {
-   connection {
-     type     = "ssh"
-     user     = "root"
-     password = "DevOps321"
-     host     = aws_instance.web.public_ip
+resource "null_resource" "null" {
+  provisioner "remote-exec" {
+    connection {
+      type     = "ssh"
+      user     = "root"
+      password = "DevOps321"
+      host     = aws_instance.web.public_ip
+    }
+
+    inline = [
+      "uname - a"
+    ]
   }
-
-  inline = [
-    "uname - a"
-  ]
 }
-
 resource "aws_security_group" "allow_ssh" {
       name        = "allow_ssh"
       description = "Allow TLS inbound traffic"
