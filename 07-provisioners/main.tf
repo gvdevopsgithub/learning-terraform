@@ -16,12 +16,17 @@ resource "aws_instance" "web" {
 //    }
 //
 //    inline = [
-//      "uname - a"
+//      "uname -a"
 //    ]
 //  }
 }
 
 resource "null_resource" "null" {
+
+  triggers = {
+    a =timestamp()
+  }
+
   provisioner "remote-exec" {
     connection {
       type     = "ssh"
