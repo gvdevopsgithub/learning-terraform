@@ -22,7 +22,7 @@ resource "aws_instance" "web" {
 }
 
 resource "null_resource" "null" {}
-   provisioner "remote-exec" {
+   provisioner remote-exec {
     connection {
     type     = "ssh"
     user     = "root"
@@ -34,7 +34,6 @@ resource "null_resource" "null" {}
     "uname - a"
   ]
 }
-
 
 resource "aws_security_group" "allow_ssh" {
       name        = "allow_ssh"
