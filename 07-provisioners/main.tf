@@ -31,10 +31,11 @@ resource "null_resource" "null" {
     }
 
     inline = [
-      "uname - a"
+      "uname -a"
     ]
   }
 }
+
 resource "aws_security_group" "allow_ssh" {
       name        = "allow_ssh"
       description = "Allow TLS inbound traffic"
