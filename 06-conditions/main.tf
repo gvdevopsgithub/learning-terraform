@@ -1,6 +1,6 @@
 resource "aws_instance" "web" {
   // count      = 0 (we can make some condition to come with a value based on that this resource can be created)
-  ami           = data.aws_ami.example.
+  ami           = data.aws_ami.example.image_id
   instance_type =  local.instance_type
 
   tags = {
