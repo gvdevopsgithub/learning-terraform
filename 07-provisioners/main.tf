@@ -22,12 +22,12 @@ resource "aws_instance" "web" {
 }
 
 resource "null_resource" "null" {}
-   provisioner remote-exec {
-    connection {
-    type     = "ssh"
-    user     = "root"
-    password = "DevOps321"
-    host     = aws_instance.web.public_ip
+ provisioner "remote-exec" {
+   connection {
+     type     = "ssh"
+     user     = "root"
+     password = "DevOps321"
+     host     = aws_instance.web.public_ip
   }
 
   inline = [
