@@ -13,3 +13,9 @@ output "a" {
 output "x" {
   value = "Value of a = ${var.a}"
 }
+
+variable "b" {}
+
+variable "c" {}
+
+variable "d" {}
