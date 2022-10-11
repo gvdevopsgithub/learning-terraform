@@ -15,7 +15,7 @@ output "x" {
 }
 
 variable "b" {}
-
+// this variable b is declared in tfvars file
 variable "c" {}
 
 variable "d" {}
