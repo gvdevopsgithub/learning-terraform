@@ -1,13 +1,13 @@
 resource "aws_security_group" "allow_ssh" {
   name        = "allow_ssh"
   description = "Allow TLS inbound traffic"
-  vpc_id      = "vpc-0ac989353056ea1a4"
+  vpc_id      = vpc-0ac989353056ea1a4
 
   ingress {
     description      = "TLS from VPC"
     from_port        = 22
     to_port          = 22
-    protocol         = "TCP"
+    protocol         = "tcp"
     cidr_blocks      = ["0.0.0.0/0"]
   }
 
@@ -24,20 +24,21 @@ resource "aws_security_group" "allow_ssh" {
   }
 }
 
+
 resource "aws_instance" "web" {
-  ami           = "ami-00d7fca492f096d8c"
-  instance_type = "t3.micro"
-  vpc_security_group_ids = [aws_security_group.allow_ssh.id]
+  ami           = ami-00d7fca492f096d8c
+  instance_type = "t2.micro"
+  vpc_security_group_ids = "aws_security_group.allow_ssh.id"
 
   tags = {
-    Name = "terraform"
+    Name = "venkatesh"
   }
 }
-
-terraform {
-  backend "s3" {
-    bucket = "terraform-b656 "
-    key    = "ex1/terraform.tfstate"
-    region = "us-east-1"
-  }
-}
+#
+#terraform {
+#  backend "s3" {
+#    bucket = "terraform-b656 "
+#    key    = "ex1/terraform.tfstate"
+#    region = "us-east-1"
+#  }
+#}
