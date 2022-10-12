@@ -5,13 +5,9 @@ variable "instance_types" {
 resource "aws_instance" "web" {
   count         = var.no-of-instances
   ami           = "ami-0f234acd4850f57e2"
-  instance_type = "t3.micro"
+  instance_type = "t2.micro"
 
   tags = {
-    Name = "terraform-${count.index + 1}"
+    Name = "terraform"
   }
-}
-
-output "public_ip_address" {
-        value = aws_instance.web.*.public_ip
 }
