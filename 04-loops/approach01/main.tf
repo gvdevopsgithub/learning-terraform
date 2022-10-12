@@ -3,7 +3,7 @@ variable "instance_types" {
 }
 
 resource "aws_instance" "web" {
-  count         = "var.no-of-instances"
+  count         = "2"
   ami           = "ami-0f234acd4850f57e2"
   instance_type = "t2.micro"
 
