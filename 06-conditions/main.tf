@@ -16,7 +16,7 @@ locals {
   instance_type = var.instance_type == null ? "t3.micro" : var.instance_type
 }
 
-data "aws_ami" "example" {
+data "aws_ami" "example.image_id" {
   executable_users = ["self"]
   most_recent      = true
   name_regex       = "base-with-ansible"
