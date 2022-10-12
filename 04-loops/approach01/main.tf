@@ -3,12 +3,12 @@ variable "instance_types" {
 }
 
 resource "aws_instance" "web" {
-  count         = "2"
+  count         = "var.no-of-instances"
   ami           = "ami-00d7fca492f096d8c"
   instance_type = "t3.micro"
 
   tags = {
-    Name = "terraform"
+    Name = "terraform-${count.index}"
   }
 }
 
