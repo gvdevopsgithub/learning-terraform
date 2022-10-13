@@ -17,7 +17,7 @@
 
 
 variable "no-of-instances" {
-  default = 3
+  default = 2
 }
 
 resource "aws_instance" "web" {
@@ -26,6 +26,6 @@ resource "aws_instance" "web" {
   instance_type = "t2.micro"
 
   tags = {
-    Name = "venkatesh"
+    Name = "venkatesh-${count.index}"
   }
 }
