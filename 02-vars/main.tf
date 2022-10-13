@@ -77,5 +77,5 @@ variable "sample" {
 }
 
 output "sample" {
-  value = "var.sample[1]"
+  value = var.sample[1]
 }
