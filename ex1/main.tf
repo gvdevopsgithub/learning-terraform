@@ -24,7 +24,6 @@ resource "aws_security_group" "allow_ssh" {
   }
 }
 
-
 resource "aws_instance" "web" {
   ami           = "ami-00d7fca492f096d8c"
   instance_type = "t3.micro"
