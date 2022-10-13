@@ -16,16 +16,16 @@
 #}
 
 
-variable "instance_types" {
+variable "no-of-instances" {
   default = 3
 }
 
 resource "aws_instance" "web" {
-  count         = "3"
+  count         = var.no-of-instances
   ami           = "ami-00d7fca492f096d8c"
-  instance_type = "t3.micro"
+  instance_type = "t2.micro"
 
   tags = {
-    Name = "terraform"
+    Name = "venkatesh"
   }
 }
