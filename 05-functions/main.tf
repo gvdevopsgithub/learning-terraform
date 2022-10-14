@@ -28,8 +28,10 @@ output "alist_length" {
 
 variable "amap" {
   default = {
-    a = 1
-    b = 2
+    set = {
+      a = 2
+      b = 3
+    }
   }
 }
 
