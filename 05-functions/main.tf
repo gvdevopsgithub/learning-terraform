@@ -25,3 +25,14 @@ variable "alist" {
 output "alist_length" {
   value = length(var.alist)
 }
+
+variable "amap" {
+  default = {
+    a = 1
+    b = 2
+  }
+}
+
+output "amap_length" {
+  value = length(var.amap)
+}
