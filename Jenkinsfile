@@ -4,6 +4,7 @@ pipeline {
 		stage ('terraform init') {
 			steps {
 				sh '''
+					ls -l
 					terraform init
 				'''
 			}
