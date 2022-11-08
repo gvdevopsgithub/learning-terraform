@@ -2,6 +2,7 @@
 provider "aws" {
   region = var.aws_region
 }
+
 resource "aws_s3_bucket" "my-s3-bucket" {
   bucket_prefix = var.bucket_prefix
   acl = var.acl
@@ -14,8 +15,8 @@ resource "aws_s3_bucket" "my-s3-bucket" {
 }
 
 
-resource "aws_instance" "web" {
-  provisioner "local-exec" {
-    command = aws s3 cp main.tf s3://my-s3bucket-20221104134551399600000001/main/
-  }
-}
+//resource "aws_instance" "web" {
+//  provisioner "local-exec" {
+//    command = aws s3 cp main.tf s3://my-s3bucket-20221104134551399600000001/main/
+//  }
+//}
