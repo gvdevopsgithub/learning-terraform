@@ -4,6 +4,7 @@ pipeline {
 		stage ('terraform init') {
 			steps {
 				sh '''
+					cd s3
 					ls -l
 					terraform init
 				'''
